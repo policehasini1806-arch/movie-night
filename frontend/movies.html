@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies — Movie Night</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="nav">
+        <a class="nav-logo" href="index.html">🎬 Movie<span>Night</span></a>
+        <div style="display:flex; gap:12px; align-items:center;">
+            <span style="font-size:0.85rem; color:var(--muted);">
+                Genre: <span id="nav-genre" style="color:var(--accent); font-family:var(--font-disp);"></span>
+            </span>
+            <button onclick="goToResults()" class="btn btn-secondary"
+                    style="width:auto; padding:8px 16px; font-size:0.85rem;">
+                📊 Results
+            </button>
+        </div>
+    </nav>
+
+    <div class="page" style="padding-top: 100px; align-items: stretch;">
+        <div class="container" style="width:100%;">
+
+            <div class="text-center" style="margin-bottom:32px; animation: fadeUp 0.4s ease both;">
+                <h2>🎬 <span class="accent" id="page-genre"></span> MOVIES</h2>
+                <p class="muted mt-8">Recommended for your group tonight</p>
+            </div>
+
+            <div id="loading" class="text-center">
+                <div class="spinner"></div>
+                <p class="muted">Fetching movies...</p>
+            </div>
+
+            <div id="error-msg" class="alert alert-error hidden" style="max-width:500px; margin:0 auto;"></div>
+
+            <div class="movies-grid" id="movies-grid"></div>
+
+            <div id="load-more-wrap" class="text-center hidden" style="margin-top:32px;">
+                <button class="btn btn-secondary" onclick="loadMoreMovies()"
+                        style="width:auto; min-width:200px;">
+                    Load More Movies
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="toast" id="toast"></div>
+    <script src="js/movies.js"></script>
+</body>
+</html>

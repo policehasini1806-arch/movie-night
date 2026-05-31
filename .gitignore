@@ -1,0 +1,21 @@
+# Maven
+target/
+*.class
+*.jar
+*.war
+
+# IDE
+.idea/
+*.iml
+.vscode/
+*.DS_Store
+
+# Spring Boot
+backend/src/main/resources/application.properties
+
+# Logs
+*.log
+logs/
+
+# Node (if added later)
+node_modules/

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vote — Movie Night</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="nav">
+        <a class="nav-logo" href="index.html">🎬 Movie<span>Night</span></a>
+        <div id="nav-info" style="font-size:0.85rem; color:var(--muted);">
+            Room: <span id="nav-room-code" style="color:var(--accent); font-family:var(--font-disp);">---</span>
+        </div>
+    </nav>
+
+    <div class="page" style="padding-top: 100px;">
+        <div class="card card-wide">
+            <div class="text-center">
+                <h2>🗳️ PICK YOUR <span class="accent">GENRE</span></h2>
+                <p class="muted mt-8">
+                    Voting as <strong id="voter-name" style="color:var(--text);">...</strong>
+                    in <strong id="room-name" style="color:var(--accent);">...</strong>
+                </p>
+            </div>
+
+            <hr class="divider">
+
+            <div id="already-voted" class="alert alert-success hidden">
+                ✅ You've already voted! Waiting for results...
+                <br><br>
+                <a href="#" onclick="goToResults()" style="color:var(--accent);">View Results →</a>
+            </div>
+
+            <div id="vote-form">
+                <p style="font-size:0.85rem; color:var(--muted); margin-bottom:4px;">Select one genre:</p>
+                <div class="genre-grid" id="genre-grid"></div>
+
+                <div id="selected-genre-display" class="hidden" style="text-align:center; margin:16px 0;">
+                    <span style="color:var(--muted); font-size:0.9rem;">Selected:</span>
+                    <span id="selected-genre-name" style="color:var(--accent); font-family:var(--font-disp); font-size:1.5rem; margin-left:8px;"></span>
+                </div>
+
+                <button class="btn btn-primary" id="voteBtn" onclick="submitVote()" disabled>
+                    🗳️ Submit Vote
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="toast" id="toast"></div>
+    <script src="js/vote.js"></script>
+</body>
+</html>

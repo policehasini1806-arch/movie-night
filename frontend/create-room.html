@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Room — Movie Night</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="nav">
+        <a class="nav-logo" href="index.html">🎬 Movie<span>Night</span></a>
+        <a href="index.html" class="btn btn-secondary" style="width:auto; padding: 8px 18px; font-size:0.9rem;">← Back</a>
+    </nav>
+
+    <div class="page" style="padding-top: 100px;">
+
+        <!-- Step 1: Create Room Form -->
+        <div id="step-form" class="card">
+            <h2>🏠 CREATE A ROOM</h2>
+            <p class="muted mt-8">Set up your movie night. Share the code with your friends.</p>
+            <hr class="divider">
+
+            <div id="error-msg" class="alert alert-error hidden"></div>
+
+            <div class="form-group">
+                <label for="roomName">Room Name</label>
+                <input type="text" id="roomName" placeholder="e.g. Friday Night Chill" maxlength="50">
+            </div>
+
+            <div class="form-group">
+                <label for="hostName">Your Name</label>
+                <input type="text" id="hostName" placeholder="e.g. Alex" maxlength="30">
+            </div>
+
+            <button class="btn btn-primary" id="createBtn" onclick="createRoom()">
+                🎬 Create Room
+            </button>
+        </div>
+
+        <!-- Step 2: Room Created -->
+        <div id="step-created" class="card hidden">
+            <div class="text-center">
+                <div style="font-size:3rem">🎉</div>
+                <h2>ROOM CREATED!</h2>
+                <p class="muted mt-8">Share this code with your friends so they can join</p>
+            </div>
+
+            <div class="room-code-display">
+                <span class="code" id="displayCode">------</span>
+                <button class="copy-btn" onclick="copyCode()" title="Copy code">📋</button>
+            </div>
+
+            <div style="margin: 16px 0;">
+                <label>Room Name</label>
+                <p id="displayRoomName" style="font-family: var(--font-disp); font-size:1.3rem; color: var(--accent);"></p>
+            </div>
+
+            <div style="margin: 16px 0;">
+                <label>Participants (<span id="participantCount">1</span>)</label>
+                <ul class="participant-list" id="participantList"></ul>
+            </div>
+
+            <button class="btn btn-primary mt-16" onclick="proceedToVote()">
+                🗳️ Start Voting
+            </button>
+
+            <p class="muted text-center mt-8" style="font-size:0.82rem;">
+                Waiting for friends? They can join at <strong>join-room.html</strong>
+            </p>
+        </div>
+
+    </div>
+
+    <div class="toast" id="toast"></div>
+    <script src="js/create-room.js"></script>
+</body>
+</html>

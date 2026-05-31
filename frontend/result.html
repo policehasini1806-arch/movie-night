@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results — Movie Night</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="nav">
+        <a class="nav-logo" href="index.html">🎬 Movie<span>Night</span></a>
+        <span id="nav-room" style="font-size:0.85rem; color:var(--muted);">
+            Room: <span style="color:var(--accent); font-family:var(--font-disp);" id="nav-room-code">---</span>
+        </span>
+    </nav>
+
+    <div class="page" style="padding-top: 100px; align-items: stretch;">
+        <div class="container" style="width:100%;">
+
+            <div id="loading" class="text-center">
+                <div class="spinner"></div>
+                <p class="muted">Counting votes...</p>
+            </div>
+
+            <div id="results-content" class="hidden">
+
+                <!-- Winner Announcement -->
+                <div class="winner-banner card card-wide" style="margin: 0 auto 32px; max-width:600px;">
+                    <span class="winner-emoji" id="winner-emoji">🏆</span>
+                    <div class="muted" style="font-size:0.9rem; margin-bottom:8px;">Tonight's genre is...</div>
+                    <div class="winner-genre" id="winner-genre">---</div>
+                    <p class="muted mt-8" id="total-votes-text"></p>
+                    <button class="btn btn-primary mt-16" onclick="goToMovies()">
+                        🎬 See Movie Recommendations
+                    </button>
+                </div>
+
+                <!-- Vote Breakdown -->
+                <div class="card card-wide" style="margin: 0 auto; max-width:600px;">
+                    <h3>📊 VOTE BREAKDOWN</h3>
+                    <hr class="divider">
+                    <div id="vote-breakdown"></div>
+                </div>
+
+            </div>
+
+            <div id="no-votes" class="card hidden" style="margin: 0 auto; max-width:480px; text-align:center;">
+                <div style="font-size:3rem">🕐</div>
+                <h3 class="mt-16">NO VOTES YET</h3>
+                <p class="muted mt-8">Waiting for participants to vote...</p>
+                <button class="btn btn-secondary mt-16" onclick="loadResults()">
+                    🔄 Refresh
+                </button>
+                <a href="vote.html" class="btn btn-primary mt-8">
+                    🗳️ Go Vote
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="toast" id="toast"></div>
+    <script src="js/result.js"></script>
+</body>
+</html>
