@@ -1,4 +1,4 @@
-const API = 'http://localhost:8080/api';
+const API = 'https://movie-night-efnx.onrender.com';
 
 let currentPage = 1;
 let currentGenre = '';

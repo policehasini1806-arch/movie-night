@@ -2,7 +2,7 @@
 // vote.js
 // =============================================
 
-const API = 'http://localhost:8080/api';
+const API = 'https://movie-night-efnx.onrender.com';
 
 const GENRES = [
     { name: 'Action',      emoji: '💥' },
