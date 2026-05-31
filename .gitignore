@@ -10,9 +10,6 @@ target/
 .vscode/
 *.DS_Store
 
-# Spring Boot
-backend/src/main/resources/application.properties
-
 # Logs
 *.log
 logs/
