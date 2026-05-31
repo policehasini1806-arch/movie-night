@@ -2,7 +2,7 @@
 // create-room.js
 // =============================================
 
-const API = 'https://movie-night-efnx.onrender.com';
+const API = 'https://movie-night-efnx.onrender.com/api';
 
 async function createRoom() {
     const roomName = document.getElementById('roomName').value.trim();

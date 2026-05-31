@@ -1,5 +1,4 @@
-const API = 'https://movie-night-efnx.onrender.com';
-
+const API = 'https://movie-night-efnx.onrender.com/api';
 let currentPage = 1;
 let currentGenre = '';
 

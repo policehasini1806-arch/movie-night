@@ -2,8 +2,7 @@
 // join-room.js
 // =============================================
 
-const API = 'https://movie-night-efnx.onrender.com';
-
+const API = 'https://movie-night-efnx.onrender.com/api';
 async function joinRoom() {
     const roomCode = document.getElementById('roomCode').value.trim().toUpperCase();
     const name     = document.getElementById('yourName').value.trim();
